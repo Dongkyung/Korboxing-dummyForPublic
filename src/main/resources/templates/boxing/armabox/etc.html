@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta th:replace="/common/commonHead"/>
+<link rel="stylesheet" href="/css/boxing/boxing.css"/>
+</head>
+<body>
+<div class="wrapper">
+	<!-- TopHeader -->
+	<div th:replace="/common/commonHeaderBar">
+	</div>
+	<!-- LeftNaviBar -->
+	<div th:replace="/common/commonLeftNaviBar">
+	</div>
+	<div class="main-panel">
+		<div class="content">
+			<div class="panel-header bg-dark-gradient">
+				<div class="page-inner">
+					<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+						<div>
+							<h2 class="text-white pb-2 fw-bold">아마복서는...</h2>
+							<h5 class="text-white op-7 mb-2">아마복싱</h5>
+						</div>
+						<ul class="breadcrumbs">
+							<li class="nav-home"><a href="/"><i class="flaticon-home text-light op-5"></i></a></li>
+							<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+							<li class="nav-item text-white"><a class="text-light op-5">아마복싱</a></li>
+							<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+							<li class="nav-item"><a href="/boxing/amabox/faq" class="text-light op-5">아마복서는...</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="page-inner">
+				<div class="row">
+						<div class="home-main-div">
+							<div>
+								<h1 class="aboutBoxing-title">아마복싱 에디터가 들려주는<br><b style="color:blue; opacity: 0.6">진짜 아마복싱 이야기</b></h1>
+							</div>
+							<div>
+								<h6 class="aboutBoxing-title sub"> - 올림픽 금메달을 취득하여 <br>대한민국을 빛내고 싶은 그들의 이야기...</h6>
+							</div>
+						
+							
+							<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">엘리트코스와 엘리트복서</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												체중 -> 체고 -> 체대복싱부까지 진학하여 <b>학창시절부터 하루 일과 내내 체계적인 훈련을 받는것</b>을 엘리트코스 그리고 그런 선수를 <b class="ama-bold">엘리트복서</b>라고 불러요.<br>
+												이런 친구들은 초등학생/ 중학생때부터 복싱을 하던 친구가 소년체전 수상 등 재능이 있는 경우 자발적으로 체중/체고로 입학할수도 있고, 체육관의 관장님의 추천으로 입학할수도 있으며, 학교에서 스카웃 제의를 받을수도 있습니다.<br>
+												</p>
+									</div>
+								</div>
+								
+								
+								
+								<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">체중/체고의 훈련</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												체중 체고에 진학을 하면 <b>일과시간을 모두 훈련</b>에 올인합니다. 그 훈련량은 정말 일반인이 생각하는 운동량 그 이상이에요.<br>
+												습관을 포함한 모든것을 버리고 정말 기본기 스탭부터 천천히 다시 배웁니다.<br>
+												동계훈련 기간이 되면 <b style="font-style: italic;">동계훈련때 쌓아올린 체력이 전국체전 때까지 이어진다</b> 고 해서 지옥과 같은 훈련을 합니다.<br>
+												새벽에는 쉬지도 못하고 죽어라 뛰구요. 오전훈련엔 웨이트훈련, 성장기에도 불구하고 체중감량에 웨이트까지 시킵니다.<br>
+												오후엔 복싱훈련을 하는데요. 이는 체육관에서 운동하는 것과는 차원이 다릅니다. 그리고 야간까지 계속 훈련해요.<br>
+												<br>
+												이러한 엘리트 과정에서 못버티고 그만두는 선수들도 많은데요.<br>
+												이때 포기하는 선수들은 추후 체육관 코치로 넘어가거나 프로테스트를 통해 프로로 넘어가거나 각자의 자기의 삶을 살아갑니다.<br>
+												그리고 이 <b>훈련과정을 마지막까지 살아남는 선수</b>들은 국내무대의 가장 큰 대회인 <b class="ama-bold">전국체전</b>에서 입상을 하면 A급 B급 C급 선수로 나뉘어져 대학에 진학 할 수 있습니다.<br>
+												대학복싱팀으로 넘어가게 되는거죠.<br>
+												</p>
+									</div>
+								</div>
+								
+								
+								<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">대학, 그리고 군대 및 실업팀</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												대학교때는 고등학교때 만큼의 훈련강도는 아니지만 이 마저도 도중에 <b>그만두는 선수</b>들이 정말 많습니다.<br>
+												제 기억에 1힉년이 10명이 입학하면 4학년 졸업생이 2-3명 졸업할 만큼 대학교도 살아남는 선수들도 몇 없습니다.<br>
+												졸업이후엔 <b class="ama-bold">국군체육부대, 실업팀</b>으로 갈 수가 있는데 그마저도 성적이 없는 선수들은 등을 돌려야 합니다.<br>
+												<br>
+												<b>국군체육부대</b>란 군복무 간 운동을 하면서 <b>상무라는 팀</b>으로 각종 국내 국제 시합에 참가해 성적을 거두는 목표로 하고있는 부대입니다.<br>
+												상무팀에서 대표팀에 들어가면 똑같이 아시안게임 세계선수권 올림픽이라는 무대도 뛸 수 있는데, 여기서 <b>아시안게임 금메달이나 올림픽 메달을 딸 경우엔 바로 조기전역</b>을 할 수 있습니다.<br>
+												연금 및 포상금은 당연히 주어집니다.<br>
+												<br>
+												그리고 <b>실업팀이란 각 시/도에 소속되어있는 직장운동선수</b>인데요.<br>
+												<b>대학부 전국체전에 좋은 성적을 거두면 높은연봉</b>을 받고 실업팀으로 갈 수 있습니다. 만약 국가대표까지 경험했다면 그 연봉은 실로 어마어마하겠죠?<br>
+												전국체전을 목표로 하고있으며 전국체전에 메달을 딸시에 포상금이 주어집니다. 그리고 선수에게 인센티브도 주어지는데 이는 각 팀마다 다소 차이가 있습니다.<br>
+												</p>
+									</div>
+								</div>
+								
+								
+								<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">아마복서의 꿈, 세계무대</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												<b class="ama-bold">올림픽</b>이나 <b class="ama-bold">아시안게임</b> 같은 국제 메이저대회에 참가하려면 국가대표 선발전에서 우승하여 <b>국가대표의 자격</b>을 받아야 하는데요.<br>
+												그해에 1차 선발전의 우승자 + 준우승자 , 2차 선발전의 우승자 + 준우승자 총 네명이서 최종선발전을 열어 최종 우승한 선수가 국가대표가 됩니다.<br>
+												<br>
+												<b>세계무대에서 금메달을 획득한다는것</b>이야 말로 <b class="ama-bold">모든 아마선수가 꿈꾸는 최종목표</b> 입니다.<br>
+												지금 이 순간도 대한민국 아마추어복서들은 세계무대에서 대한민국을 빛내기 위해 지옥과 같은 훈련을 버텨가며 피땀을 흘리고 있습니다.<br>
+												아마복서에게 있어서 나라를 대표하여 세계무대에 올랐다는것은 연금과 포상금과는 별개로 그 성취감과 명예는 말로 표현할 수가 없을만큼 벅찬 일입니다.<br><br>
+
+												그리고 운동선수에게는 병역혜택이 몹시 중요한데요.<br>
+												이는 군대를 단순히 기피하려는 목적보다, 군 생활을 마치고 오면 운동선수로써의 생명이 아무래도 크게 휘청하거든요.<br>
+												그래서 <b>병역혜택을 받냐 못받냐가 선수생명에 몹시 큰 영향을 좌지우지</b> 해요.<br><br>
+												<b>아시안게임은 금메달만 병역혜텍</b>이 주어지고 나머지는 병역혜택이 주어지지 않습니다. 메달색의 가치가 정말 하늘과 땅차이라고 볼수있어요.<br>
+												<b>올림픽의 경우 색에 상관없이 메달을 획득하기만 하면 병역혜택</b>이 주어지는데요.<br>
+												하지만 올림픽의 경우 대표가 된다고 다 출전할수 있는건 아니고 대표가 된 후에 올림픽 티켓이 걸려있는 대회에 참가해 순위안에 들어야지 참여티켓이 주어집니다.<br>
+												올림픽에 참여한다는게 어느정도 난이도인지 실감하시겠죠?<br>
+												</p>
+									</div>
+								</div>
+								
+								
+								<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">아마복서의 삶은..</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												어린나이부터 이십대 중후반까지 복싱과 훈련만 하면서 어느순간 뒤를 돌아 봤을때는 정말 많은것을 깨닫게 해줍니다.<br>
+												매일을 운동으로 시작해 운동으로 끝나며 중학교 고등학교 대학교 실업팀까지....  <br>
+												하루하루가 지옥같을 정도로 힘든 삶이지만 시합에 나가서 <b class="ama-bold">메달</b>을 따오면 그 성취감 하나로 <b>힘들게 운동해온 고통들을 싹 잊게</b>해줍니다.<br><br>
+												선수생활이 짧은 운동이지만 반대로 결혼도 하고 늦은나이에도 열심히 선수생활하는 아빠복서들도 있습니다.<br>
+												무언가를 생각하며 운동하면 힘든것도 싹 잊게되는것 같습니다.<br>
+												</p>
+									</div>
+								</div>
+								
+								
+								<div class="card aboutBoxing-card">
+								<div class="card-header">
+									<h1 class="card-title aboutBoxing-card-title">마지막으로 전하고 싶은 말</h1>
+								</div>
+								<div class="card-body boxingDescription pro">
+												<p>
+												예전에는 한국이 <b>복싱 강국</b>이라고 불릴만큼 올림픽 효자종목 이었습니다.<br>
+												지금은 많이 침체되었지만 요즘에 <b>생활체육복싱이란 시스템</b>을 통해 복싱의 레벨을 한층 올려주고 있습니다.<br>
+												생활체육복싱대회에 초등부도 참가하게 만들어 조기교육을 통해 복싱 영재를 발굴해나가면서 점차 그 친구들이 올림픽 금메달을 통해 대한민국을 빛내고, 그렇게 다시 복싱 강국이 되리라 믿습니다!!<br>
+												<br>
+												그래서 아마복싱선수 추천하냐구요?<br>
+												.<br>
+												.<br>
+												.<br>
+												<b class="ama-bold" style="font-size:20px">생지옥이 따로없습니다. 그냥 다른거 하세요. 진짜 제발.</b><br>
+												</p>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+			</div>
+			<footer th:replace="/common/commonFooter.html"></footer>
+		</div>
+	</div>
+	</body>
+	</html>

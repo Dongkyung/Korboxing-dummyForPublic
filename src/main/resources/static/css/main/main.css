@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.home-main-div{
+	position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.card-title.main-title{
+	font-size:25px;
+	font-weight:bold;
+	text-align: center;
+}
+
+
+
+.main-intro-nav{
+		flex: 0 0 25%;
+	    max-width: 25%;
+}	
+
+@media (max-width: 768px){
+	.main-intro-nav{
+		flex: unset;;
+	    max-width: unset;
+	    text-align:center;
+	}	
+	div#v-pills-tab-with-icon{
+		display: inline-block;
+    	position: relative;
+    	width: 100%;
+	}
+	.main-intro-content{
+		flex: unset;;
+	    max-width: unset;
+	}
+	.main-intro-nav .nav-link{
+		width: 30%;
+	    float: left;
+	    margin-left: 5px;
+	    font-size: 11px;
+	} 
+	
+}
+
+.home-main-div p{
+	font-size : 16px;
+}
+
+.home-main-div h3{
+	font-weight:bold;
+	margin-top:40px;
+}
+
+.main-whatContext-btag{
+	color:#ff7777;
+}
+.main-whyContext-btag{
+	color:#0080c0;
+}
+
+h3.editerContext-subtitle{
+	 border-top: 1px solid gray;
+	 padding-top: 10px;
+	 margin-top:50px;
+}
+
+.main-editerContext-btag.pro{
+	color:#ff7777;
+}
+.main-editerContext-btag.ama{
+	color:#0080c0;
+}
+.main-editerContext-btag.dev{
+	color:green;
+}

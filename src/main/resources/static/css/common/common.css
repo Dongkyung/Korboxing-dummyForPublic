@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+
+::-webkit-scrollbar {
+	  width: 10px;  /* 세로축 스크롤바 길이 */
+	  height: 5px;  /* 가로축 스크롤바 길이 */
+	}
+
+@media (max-width: 768px){
+	::-webkit-scrollbar {
+	  width: 1px;  /* 세로축 스크롤바 길이 */
+	  height:1px;  /* 가로축 스크롤바 길이 */
+	}
+	
+	.scroll-element{
+		width:1px !important;
+		height:1px !important;
+	}
+}
+
+/* 스크롤바 막대 바깥 바탕색 */
+::-webkit-scrollbar-track {
+  background: #eee; 
+}
+ 
+/* 스크롤바 막대색 */
+::-webkit-scrollbar-thumb {
+  background: #aaa; 
+}
+
+.last_li{
+	border-bottom: 1px solid #f1f1f1;
+}
+
+.navi_icon{
+	opacity:0.5
+}
+
+.navi_a:hover .navi_icon{
+	opacity:1;
+}
+
+/* .navi_a:focus .navi_icon{ */
+/* 	opacity:1; */
+/* } */
+
+li.nav-item.active img.navi_icon{
+	opacity:1;
+}
+
+.footer{
+	position:unset;
+	bottom: 0px;
+}
+
+.dropdown-menu li a{
+	display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+
+#loadingBox{
+	max-width: 100%;
+	max-height: 100%;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background-color: white;
+	opacity: 0.5;
+}
+
+.modal-close{
+	position: fixed;
+    top: 10px;
+    right: 30px;
+    z-index: 10;
+}
+
+.footer-content{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+
+/*******************************
+*******************    문의하기  CSS
+*******************************/
+
+#inquiryFade{
+	padding-right:0px;
+}
+
+
+#inquiryFade > .modal-dialog{
+	max-width:none;
+	width:700px;
+	height:800px
+}
+
+h2#modal-title-inquiry{
+	font-weight: bold;
+}
+
+
+@media screen and (max-width: 767px){
+	#inquiryFade > .modal-dialog{
+	width:100%;
+}
+}
+
+#contactForm > .form-floating-label{
+	width: 40%;
+	float:left;
+	margin:0px 30px;
+}
+
+@media screen and (max-width: 767px){
+	#contactForm > .form-floating-label{
+		display:inline-block;
+		width: 80%;
+		margin:0px 30px;
+	}
+}
+
+.user_qna{padding-top:20px; padding-bottom: 40px; text-align: center}
+.user_qna span.title{display: block; font-size:20px; text-align: left; padding-bottom: 10px}
+.user_qna ul{display:inline-flex; flex-direction: row;  margin-bottom:12px; width:100%}
+.user_qna li{flex-basis: 30%;}
+.user_qna textarea{display:relative; width:90%; height: 140px; line-height: 24px; padding:20px 20px; margin-bottom:20px}
+.user_qna a.btn_default{min-width:160px}
+
+
+
+
+@font-face { font-family: 'Bazzi'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'NEXON Lv1 Gothic OTF'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff'); font-weight: normal; font-style: normal; }

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta th:replace="/backup/common/header" />
+</head>
+
+<body>
+<div id="wrap">
+<!-- 	<div th:replace="/common/admin_login_popup"></div> -->
+<!-- 	<div th:replace="/common/contact_us_popup"></div> -->
+	<div th:replace="/backup/common/sitemap"></div>
+    <div th:replace="/backup/common/content_header"></div>
+<!--     <div th:replace="/common/m_content_header"></div> -->
+    
+    <section class="web">
+        <div class="sub_top media_top"><span class="aro_mind">국내 프로선수<sub>국내 프로복서 프로필 및 전적</sub></span></div>
+    </section>
+	<section th:replace="/backup/boxer/navi"></section>
+<!-- 	<div th:replace="/media/m_navi"></div> -->
+    
+    <container>
+        <section>
+        <div th:replace="/backup/boxer/boxerkor/sidebar"></div>
+            <article>
+                <h2>남자 프로선수</h2>
+                <div class="board">
+
+				<table class="search-menu" style="width:100%">
+                	<tr>
+                		<td style="width:10%">
+                			<div class="btn-group">
+							  <button type="button" id="division_btn_group" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+							  				th:text="${division_kor}">
+							<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+							  	<li role="presentation" class="dropdown-header">체급을 선택하세요. (kg)</li>
+							  	<li><a href="javascript:void(0)" onclick="newListPage('division','all')">전체</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','heavyweight')">헤비급(90.9 ~)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','cruiserweight')">크루저급(79.4 ~ 90.9)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','light_heavyweight')">라이트헤비급(76.2 ~ 79.4)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_middleweight')">슈퍼미들급(72.6 ~ 76.2)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','middleweight')">미들급(69.9 ~ 72.6)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_welterweight')">슈퍼웰터급(66.7 ~ 69.9)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','welterweight')">웰터급(63.5 ~ 66.7)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_lightweight')">슈퍼라이트급(61.2 ~ 63.5)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','lightweight')">라이트급(59.0 ~ 61.2)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_featherweight')">슈퍼패더급(57.2 ~ 59.0)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','featherweight')">패더급(55.2 ~ 57.2)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_bantamweight')">슈퍼벤텀급(53.5 ~ 55.2)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','bantamweight')">벤텀급(52.2 ~ 53.5)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','super_flyweight')">슈퍼플라이급(50.8 ~ 52.2)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','flyweight')">플라이급(49.0 ~ 50.8)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','light_flyweight')">라이트플라이급(47.6 ~ 49.0)</a></li>
+								<li><a href="javascript:void(0)" onclick="newListPage('division','minimumweight')">미니멈급(~ 47.6)</a></li>
+							  </ul>
+							</div>
+                		</td>
+                		<td style="width:10%">
+							<div id="radioBtnV2" class="btn-group">
+		                        <span id="stat_active" class="btn btn-primary btn-sm active" data-toggle="estadochange" data-value="L" data-active="btn-primary" data-notactive="btn-default">현역</span>
+		                        <span id="stat_inactive" class="btn btn-default btn-sm notActive" data-toggle="estadochange" data-value="D" data-active="btn-info" data-notactive="btn-default">은퇴</span>
+	                    	</div>
+                    		<input type="hidden" name="estadochange" id="estadochange">
+                		</td>
+                		<td style="width:auto; float:right;">
+                			<div class="row search_input_div">
+							  <div class="col-lg-6 search_input_div_2">
+							    <div class="input-group">
+							      <div class="input-group-btn">
+							        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">이름 <span class="caret"></span></button>
+							        <ul class="dropdown-menu" role="menu">
+							          <li><a href="#">이름</a></li>
+							          <li><a href="#">라이센스 ID</a></li>
+							        </ul>
+							      </div><!-- /btn-group -->
+							      <input type="text" class="form-control search_input" aria-label="...">
+							      <span class="input-group-btn">
+							        <button class="btn btn-default" type="button">검색</button>
+							      </span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-6 -->
+							</div><!-- /.row -->
+                		</td>
+                	</tr>
+                </table>
+
+<!--                     <div class="bl mb2 web"> -->
+<!--                         <div class="board_search"> -->
+<!--                         	<form action="/boxer/boxerkor/mboxerinfo" name="searchForm"> -->
+<!--                         		<input type="text" name="searchTarget" th:value="${paging.searchTarget}" /> -->
+<!--                         		<a href="#" onclick="this.parentNode.submit();return false;">검색</a> -->
+<!--                         	</form> -->
+<!--                         </div>                         -->
+<!--                     </div> -->
+                    
+                    
+                    <table class="list">
+                        
+                         <tr class="on">
+                            <td>순위</td>
+                            <td>이름</td>
+                            <td>체급</td>
+                            <td>승</td>
+                            <td>패</td>
+                            <td>무</td>
+                            <td>상태</td>
+                        </tr>
+                        <tr th:each="item : ${boxerList}">
+                            <td class="ranking"  th:text="${item.ranking}">순위</td>
+                            <td class="boxerName" th:text="${item.boxer_name}">이름</td>
+                            <td class="division" th:text="${item.division}">체급</td>
+                            <td class="win" th:text="${item.win}">승</td>
+                            <td class="lose" th:text="${item.lose}">패</td>
+                            <td class="draw" th:text="${item.draw}">무</td>
+                            <td class="status" th:text="${item.status}">상태</td>
+<!--                             <td th:if="${item.status} == 'active'" class="status" th:text="현역">상태</td> -->
+<!--                             <td th:if="${item.status} == 'inactive'" class="status" th:text="은퇴">상태</td> -->
+                        </tr>
+<!--                         <tr th:each="item,iterStat : ${viewContent}" th:onclick="|location.href= '/media/viewNews?seq=${item.seq}';|"> -->
+<!--                             <td class="number" th:text="${paging.contentStartNo - iterStat.index}">No</td> -->
+<!--                             <td class="subject" th:text="${item.title}">제목</td> -->
+<!--                             <td class="date" th:text="${item.regDate}">등록일</td> -->
+<!--                         </tr> -->
+                    </table>
+<nav>
+<!-- 	<div th:replace="/common/paging"></div> -->
+	
+	<ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+                    
+                </div>
+<!--                 <div th:if="${session.admin != null}" class="board_bottom web"> -->
+<!--                     <a href="/media/registerNews" class="btn_default btn_right">글쓰기</a>관리자 로그인 상태 -->
+<!--                 </div> -->
+<!--                 <div th:replace="/common/paging"></div> -->
+            </article>          
+        </section>
+    </container>
+
+	<footer th:replace="/backup/common/footer"></footer>
+</div>
+</body>
+
+<script src="/backup/js/boxer.js"></script>
+<script>
+function refreshPage(){
+    window.location.reload();
+}
+
+$(document).ready(function () {
+	init();
+})
+
+// window.onload = function(){
+// 	$('.toggle.btn').click(function(){
+// 		alert(1);
+// 	    window.location.reload();
+// 	});
+// }
+
+// $('.toggle-off').click(refreshPage);
+</script>
+
+</html>

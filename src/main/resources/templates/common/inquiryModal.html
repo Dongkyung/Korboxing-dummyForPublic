@@ -1,0 +1,75 @@
+<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+<!-- Modal -->
+<div class="modal fade" id="inquiryFade" tabindex="-1" role="dialog" aria-hidden="true" style="overflow:auto;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content inquiryModal" >
+      <div class="modal-header">
+                <h2 class="modal-title" id="modal-title-inquiry" style="margin-left: 30px">문의하기</h2>
+        <button type="button" class="btn btn-danger btn-sm modal-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">닫기</span>
+        </button>
+      </div>
+      <div class="modal-body">
+						    
+						        <h5 style="text-align:center; margin-bottom:30px;">잘못된 정보 및 제보, 문의사항을 보내주세요. </h5>
+						        <form id="contactForm" name="contactForm">
+							        
+								            	<div class="form-group form-floating-label">
+													<input id="nickName" name="nickName" type="text" class="form-control input-border-bottom">
+													<label for="nickName" class="placeholder">* 닉네임</label>
+												</div>
+											
+								            	<div class="form-group form-floating-label">
+													<input  name="userName" type="text" class="form-control input-border-bottom">
+													<label  class="placeholder">이름</label>
+												</div>
+											
+								            	<div class="form-group form-floating-label">
+													<input  name="email" type="text" class="form-control input-border-bottom">
+													<label  class="placeholder">* 이메일</label>
+												</div>
+
+								            	<div class="form-group form-floating-label">
+													<input  name="phoneNumber" type="text" class="form-control input-border-bottom">
+													<label  class="placeholder">연락처</label>
+												</div>										
+							        <div class="user_qna">
+<!-- 							            <ul id="inquiry-category"> -->
+<!-- 							                <li><a href="#" name="category" onclick="return false;" title="선수정보 오류">선수정보 오류</a></li> -->
+<!-- 							                <li><a href="#" name="category" onclick="return false;" title="기능추가 요청">기능추가 요청</a></li> -->
+<!-- 							                <li><a href="#" name="category" onclick="return false;" title="응원 메세지">응원 메세지</a></li> -->
+<!-- 							                <li><a href="#" name="category" onclick="return false;" title="그 외">그 외</a></li> -->
+<!-- 							            </ul> -->
+										<ul class="nav nav-pills nav-default  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#pills-home-icon" role="tab" aria-controls="pills-home-icon" aria-selected="true">
+													<i class="flaticon-user-5"></i>
+													선수정보
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#pills-profile-icon" role="tab" aria-controls="pills-profile-icon" aria-selected="false">
+													<i class="flaticon-share-1"></i>
+													기능제안
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="pills-contact-tab-icon" data-toggle="pill" href="#pills-contact-icon" role="tab" aria-controls="pills-contact-icon" aria-selected="false">
+													<i class="flaticon-chat"></i>
+													그 외
+												</a>
+											</li>
+										</ul>
+							            <div style="text-align:center">
+							            	<textarea name="inquiryContent"></textarea>
+							            </div>
+							            <button onclick="sendInquiry(); return false;" class="btn btn-default">문의하기</button>
+							        </div>
+						        </form>
+
+
+     </div>
+     </div>
+   </div>
+ </div>
+ </html>

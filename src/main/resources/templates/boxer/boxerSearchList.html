@@ -1,0 +1,116 @@
+<div class="table-responsive">
+	<div id="search_division">
+		<span style="font-size: 15px; font-weight: bold;">체급 선택 : </span>
+			<div class="btn-group" style="position:inherit;">
+				<button type="button" id="division_btn_group" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="ture" th:text="${division_kor}">
+					<span class="caret"></span>
+				</button>
+			<ul class="dropdown-menu" role="menu" style="font-size: 13px;">
+				<li role="presentation" class="dropdown-header">체급을 선택하세요. (kg)</li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','all')">전체</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','heavyweight')">헤비급(90.9 ~)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','cruiserweight')">크루저급(79.4 ~ 90.9)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','light_heavyweight')">라이트헤비급(76.2 ~ 79.4)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','super_middleweight')">슈퍼미들급(72.6 ~ 76.2)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','middleweight')">미들급(69.9 ~ 72.6)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','light_middleweight')">슈퍼웰터급(66.7 ~ 69.9)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','welterweight')">웰터급(63.5 ~ 66.7)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','light_welterweight')">슈퍼라이트급(61.2 ~ 63.5)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','lightweight')">라이트급(59.0 ~ 61.2)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','super_featherweight')">슈퍼패더급(57.2 ~ 59.0)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','featherweight')">패더급(55.2 ~ 57.2)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','super_bantamweight')">슈퍼벤텀급(53.5 ~ 55.2)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','bantamweight')">벤텀급(52.2 ~ 53.5)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','super_flyweight')">슈퍼플라이급(50.8 ~ 52.2)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','flyweight')">플라이급(49.0 ~ 50.8)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','light_flyweight')">라이트플라이급(47.6 ~ 49.0)</a></li>
+				<li><a href="javascript:void(0)" onclick="newListPage('division','minimumweight')">미니멈급(~ 47.6)</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="btn-group btn-group-toggle" id="search_status" data-toggle="buttons" style="display:block; margin-top: 10px;">
+		<button class="btn btn-sm btn-outline-info" onclick="newListPage('status','active')"><b>현역</b>
+		</button>
+		<button class="btn btn-sm btn-outline-warning" onclick="newListPage('status','inactive')" style="margin-left: 2px; "><b>은퇴</b>
+		</button>
+	</div>
+	<span class="boxerWarning pc">* 이 데이터는 Boxrec 저작권 소유의 선수 개인정보이며, 무단으로 수집할 경우 형사처벌을 받을 수 있습니다.</span>
+	<span class="boxerWarning mobile">* 이 데이터는 Boxrec 저작권 소유의 선수 개인정보입니다.<br> 무단으로 수집할 경우 형사처벌을 받을 수 있습니다.</span>
+<div id="loadingBox" style="text-align: center;  padding-top: 400px;">
+                           <img src='/img/common/Loading_icon.gif'/>
+                       </div>
+	<table id="boxerListTable" class="display table table-hover table-sm boxerListTable">
+	<thead>
+	<tr>
+		<th style="width:5%; min-width: 30px;">
+			순위
+		</th>
+		<th style="width:7%; min-width:92px;">
+			체급
+		</th>
+		<th style="width:15%; min-width:80px;">
+			이름
+		</th>
+		<th style="width:15%; min-width:130px;">
+			승-패-무
+		</th>
+		<th style="width:5%; min-width:35px;">
+			상태
+		</th>
+		<th style="width:7%; min-width:60px;">
+			ID
+		</th>
+		<th style="width:5%; min-width:60px;">
+			업데이트
+		</th>
+		<th style="width:3%; min-width:55px;">
+			번역지원
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="item : ${boxerList}"  th:onclick="openBoxerDetailModal([[${item.boxer_id}]])">
+		<td th:text="${item.korea_rank}">
+			순위
+		</td>
+		<td th:text="${item.division}">
+			체급
+		</td>
+		<th:block th:if="${item.isTranslated}=='N'">
+		<td id="boxer_name_eng" th:text="${item.boxer_name_eng}" th:style="'font-weight:bold; font-size:14px;'">
+			이름
+		</td>
+		</th:block>
+		<th:block th:unless="${item.isTranslated}=='N'">
+		<td th:text="${item.boxer_name_kor}" th:style="'font-weight:bold; font-size:14px;'">
+			이름
+		</td>
+		</th:block>
+		<td>
+			<span th:text="|${item.win} 승|" th:style="'font-weight:bold; font-size:14px; color:blue'"></span> - <span th:text="|${item.lose} 패|" th:style="'font-weight:bold; font-size:14px; color:red'"></span> - <span th:text="|${item.draw} 무|" th:style="'font-weight:bold; font-size:14px; color:green'"></span>
+		</td>
+		<td th:if="${item.status} =='현역'">
+			<label class="btn btn-sm btn-outline-info active state_label_active" style="font-size: 11px !important">
+				<b>현역</b>
+			</label>
+		</td>
+		<td th:if="${item.status} =='은퇴'">
+			<label class="btn btn-sm btn-outline-warning active  state_label_inactive" style="font-size: 11px !important">
+				<b>은퇴</b>
+			</label>
+		</td>
+		<td id="boxer_id" th:text="${item.boxer_id}">
+			ID
+		</td>
+		<td th:text="${item.lsttm}" th:style="'font-size:10px;'">
+			업데이트날짜
+		</td>
+		<td>
+			<th:block th:if="${item.isTranslated}=='N'">
+			<button type="button" class="btn btn-primary btn-sm" style="width: 70px; height: 30px; font-size:12px; padding:0px" th:onclick="inputTranslate([[${item.boxer_id}]], [[${item.boxer_name_eng}]], '입력','list')">번역입력</button>
+			</th:block>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</div>

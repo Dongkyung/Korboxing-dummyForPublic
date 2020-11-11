@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.box.korBoxing.dao.InquiryDAO">
+
+	<insert id="registerInquiry" parameterType="inquiryVO">
+		<selectKey keyProperty="seq" resultType="_long" order="AFTER">
+			SELECT 
+				MAX(seq) 
+			FROM 
+				tb_inquiry
+		</selectKey>
+		INSERT INTO 
+			tb_inquiry 
+		(
+			nickName
+			, userName
+			, phoneNumber
+			, email
+			, destinationemail
+			, category
+			, content
+			, regDate
+		) 
+		VALUES
+		(
+			#{nickName}
+			, #{userName}
+			, #{phoneNumber}
+			, #{email}
+			, #{destinationEmail}
+			, #{category}
+			, #{content}
+			, NOW()
+		)
+	</insert>
+
+<!-- 	<select id="getInquiry" parameterType="_long" resultType="inquiryVO"> -->
+<!-- 		SELECT  -->
+<!-- 			seq -->
+<!-- 			, business_name							AS businessName -->
+<!-- 			, manager -->
+<!-- 			, phoneNumber -->
+<!-- 			, email -->
+<!-- 			, destionation_email -->
+<!-- 			, content -->
+<!-- 			, DATE_FORMAT(reg_date, '%Y-%m-%d %T') 	AS regDate  -->
+<!-- 		FROM  -->
+<!-- 			tb_inquiry  -->
+<!-- 		WHERE  -->
+<!-- 			seq = #{seq} -->
+<!-- 	</select> -->
+
+</mapper>

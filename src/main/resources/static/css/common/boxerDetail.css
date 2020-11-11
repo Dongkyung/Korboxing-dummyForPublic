@@ -1,0 +1,254 @@
+@charset "UTF-8";
+
+#boxerDetailModal{
+	padding-right:0px;
+}
+
+
+#boxerDetailModal > .modal-dialog{
+	max-width:none;
+	width:1000px;
+	height:800px
+}
+
+
+@media screen and (max-width: 767px){
+	#boxerDetailModal > .modal-dialog{
+		width:auto;
+		margin: 0px;
+	}
+}
+
+div.boxerProfileModal{
+	background-color:#f6f6f6;
+	height: 800px;
+	overflow: auto;
+}
+
+.boxerProfileModal > .modal-header{
+	display:unset;	
+}
+
+.boxerProfileModal .modal-title{
+	float:left;
+}
+
+@media screen and (max-width: 767px){
+	div.boxerProfileModal>div.modal-body{
+		text-align: center;		
+	}
+}
+
+
+
+h2#modal-title-boxername{
+	font-weight: bold;
+}
+
+div#updateDateDiv{
+	top: 45px;
+    left: 45px;
+    position: absolute;
+    font-size: 11px;
+}
+
+button#copyProfileUrl{
+	position: relative;
+	top: 4px;
+	margin-left: 20px;
+	padding: 0px;
+    width: 90px;
+    height: 25px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 767px){
+	button#copyProfileUrl{    
+	    position: absolute;
+	    top: 44px;
+	    left: 190px;
+	    padding: 0px;
+	    height: 17px;
+	    font-size: 10px;
+	    opacity: 0.8;
+	    margin-left: 0px;
+    }
+}
+
+div.avatar-auto{
+	width:100%;
+	height:100%;
+	text-align: center;
+    line-height: 280px;
+}
+
+img.avatar-img.boxer-profile-img{
+	width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 280px;
+    vertical-align: middle;
+}
+
+div.card-profileImg{
+	width:240px;
+	height:322px;
+	float: left;
+}
+
+
+div.card-detailInfo{
+	width: 330px;
+	height: 155px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom:10px;
+}
+
+@media screen and (max-width: 767px){
+	div.card-detailInfo, div.card-profileImg{
+		width: 100%;
+		float:none;
+		display:inline-block;
+	    margin-left: 5px;
+	    margin-bottom:5px;
+	}
+}
+
+div.detailInfoPart{
+	float:left;
+	width: 300px;
+}
+
+div.detail-card-header{
+	padding:5px !important;
+}
+
+h6.detail-card-title{
+	font-size:15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.detail-card-body{
+	padding:10px !important;
+}
+
+div.detail-card-body.status{
+	text-align: center;
+}
+
+div.card-detailInfo th{
+	width:40%;
+}
+
+div.card-detailInfo td{
+	width:60%;
+}
+
+.label_detailInfo{
+	width:90%;
+	height:90%;
+	padding:20px;
+	margin-top:5px;
+	font-size:35px !important;
+	border-radius: 10px;
+	padding-top: 30px;
+}
+
+div.card-boutDetail table{
+	width:100%;
+}
+
+div.card-boutDetail{
+	width: 910px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom:10px;
+}
+
+label.boutResultLabel_1{
+	width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    float:left;
+    border-radius: 10px;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+label.boutResultLabel_1.w{
+	background-color:blue;
+}
+label.boutResultLabel_1.l{
+	background-color:red;
+}
+label.boutResultLabel_1.d{
+	background-color:green;	
+}
+
+span.boutResultLabel_2{
+	font-size:13px !important;
+	position:absolute;
+	width:auto;
+	font-weight:bold;
+	left:5px;
+	top:-6px;
+}
+
+div.boutResultDetail{
+	float:left;
+	height:30px;
+	width:130px;
+	position:relative;
+}
+
+span.boutResultLabel_2.w, span.boutResultLabel_3.w{
+	color:blue;
+}
+span.boutResultLabel_2.l, span.boutResultLabel_3.l{
+	color:red;
+}
+span.boutResultLabel_2.d, span.boutResultLabel_3.d{
+	color:green;
+}
+
+span.boutResultLabel_2.ko, span.boutResultLabel_3.ko{
+	opacity: 1;
+}
+span.boutResultLabel_2.de, span.boutResultLabel_3.de{
+	opacity: 0.7;
+}
+span.boutResultLabel_2.etc, span.boutResultLabel_3.etc{
+	opacity: 0.3;
+}
+
+span.boutResultLabel_3{
+	font-size:5px !important;
+	position:absolute;
+	width:auto;
+	left:5px;
+	top:7px;
+}
+
+@media screen and (max-width: 767px){
+	div.boxerProfileModal>div.modal-body, div.card-boutDetail>div.detail-card-body{
+		padding :0px !important;
+	}
+	div.card-boutDetail{
+		margin-left:0px;
+		width:650px;
+		transform:scale(0.8);
+		transform-origin: top left;
+	}
+	div.card-boutDetail table{
+		width: 100%;
+	}
+	div.boutResultDetail{
+		width: 110px;
+	}
+}

@@ -1,0 +1,41 @@
+<div id="contact-us" class="popup disNone"><!--제휴문의-->
+    <div class="popup_bg"></div>
+    <div class="contact">
+        <a href="#" onclick="this.parentNode.parentNode.classList.toggle('disNone');return false;" class="btn_close"></a>
+        <h2>문의하기</h2>
+        <div class="sub_text">잘못된 정보 및 제보, 문의사항을 보내주세요.</div>
+        <form name="contactForm">
+	        <div class="user_info">
+	            <ul>
+	            	<li><input type="text" name="nickName" placeholder="닉네임(필수)" /></li>
+	                <li><input type="text" name="userName" placeholder="이름" /></li>
+	                <li><input type="email" name="email" placeholder="이메일(필수)" /></li>
+	                <li><input type="text" name="phoneNumber" placeholder="연락처" /></li>
+	                
+	            </ul>
+	        </div>
+	        <div class="user_qna">
+	            <span class="title">분류</span>
+	            <ul id="inquiry-category">
+	                <li><a href="#" name="category" onclick="return false;" title="선수정보 오류">선수정보 오류</a></li>
+	                <li><a href="#" name="category" onclick="return false;" title="기능추가 요청">기능추가 요청</a></li>
+	                <li><a href="#" name="category" onclick="return false;" title="응원 메세지">응원 메세지</a></li>
+	                <li><a href="#" name="category" onclick="return false;" title="그 외">그 외</a></li>
+	            </ul>
+	            <script>
+	            	(function() {
+	            		var inquiryCategory = document.getElementById('inquiry-category');
+	            		var anchorList = inquiryCategory.getElementsByTagName('a');
+	            		
+	            		$(anchorList).on('click', function(e) {
+	            			$(anchorList).removeClass('on');
+	            			$(e.target).addClass('on');
+	            		});
+	            	}());
+	            </script>
+	            <textarea name="inquiryContent"></textarea>
+	            <a href="#" onclick="korBoxing.sendInquiry();return false;" class="btn_default">문의하기</a>
+	        </div>
+        </form>
+    </div>
+</div>

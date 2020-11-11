@@ -1,0 +1,137 @@
+<!-- Modal -->
+<div class="modal fade" id="boxerDetailModal" tabindex="-1" role="dialog"  aria-hidden="true" style="overflow:auto;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content boxerProfileModal" >
+      <div class="modal-header">
+                <h2 class="modal-title" id="modal-title-boxername" style="margin-left: 30px"></h2> <h2 class="modal-title" style="margin-left: 10px">선수</h2>
+               	<div id="updateDateDiv">
+       				<span>업데이트 날짜 :</span><span id="updateDateSpan"></span>
+       			</div>
+                <button class="btn btn-success btn-sm" id="copyProfileUrl">프로필 공유</button>
+                <input type="text" id = "copyUrlTemp" style="display:none">
+        <button type="button" class="btn btn-danger btn-sm modal-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">닫기</span>
+        </button>
+      </div>
+      <div class="modal-body">
+						<div class="card card-profileImg">
+								<div class="card-body">
+										<div class="avatar avatar-auto">
+										
+										</div>
+								</div>
+							</div>
+							
+							<div class="card card-detailInfo">
+								<div class="card-header detail-card-header">
+									<h6 class="card-title detail-card-title">활동정보</h6>
+								</div>
+								<div class="card-body detail-card-body">
+											<table style="width:100%">
+											 		<tr>
+											 			<th>이름</th>
+											 			<td id="detail_boxerName"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>출생년도</th>
+											 			<td id="detail_born"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>활동</th>
+											 			<td id="detail_career"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>선수ID</th>
+											 			<td id="detail_boxerId"></td>
+											 		</tr>
+											 	</table>
+								</div>
+							</div>
+							
+							<div class="card card-detailInfo">
+								<div class="card-header detail-card-header">
+									<h6 class="card-title detail-card-title">스펙정보</h6>
+								</div>
+								<div class="card-body detail-card-body">
+											<table style="width:100%">
+											 		<tr>
+											 			<th>체급</th>
+											 			<td id="detail_division"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>신장</th>
+											 			<td id="detail_height"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>스탠스</th>
+											 			<td id="detail_stance"></td>
+											 		</tr>
+											 	</table>
+								</div>
+							</div>
+							
+							<div class="card card-detailInfo">
+								<div class="card-header detail-card-header">
+									<h6 class="card-title detail-card-title">경기정보</h6>
+								</div>
+								<div class="card-body detail-card-body">
+											<table style="width:100%">
+											 		<tr>
+											 			<th>국내랭킹</th>
+											 			<td id="detail_rank"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>전적</th>
+											 			<td id="detail_wld"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>총 라운드 수</th>
+											 			<td id="detail_rounds"></td>
+											 		</tr>
+											 		<tr>
+											 			<th>KO률</th>
+											 			<td id="detail_kos"></td>
+											 		</tr>
+											 	</table>
+								</div>
+							</div>
+							
+							
+							<div class="card card-detailInfo">
+								<div class="card-body detail-card-body status">
+								
+								</div>
+							</div>
+
+
+      </div>
+      <div class="modal-header">
+        <h3 class="modal-title" id="boxerName" style="margin-left: 30px; text-align: center; width:100%"><b>경기 상세정보</b></h3>
+      </div>
+      <div class="modal-body">
+<!--         	<div style="width:20%;  padding:20px; border: 1px solid black;"></div> -->
+<!--         	<div style="padding:20px; border: 1px solid black;"></div>  -->
+
+
+							<div class="card card-boutDetail">
+								<div class="card-body detail-card-body">
+											<table>
+													<thead>
+												 		<tr>
+												 			<th style="width:10%">날짜</th>
+												 			<th style="width:20%">상대선수</th>
+												 			<th style="width:15%">당시 선수전적</th>
+												 			<th style="width:20%">결과</th>
+												 			<th style="width:10%">라운드</th>
+<!-- 												 			<th style="width:15%">업데이트날짜</th> -->
+												 		</tr>
+											 		</thead>
+											 		<tbody id="boutDetailTbody">
+											 		</tbody>
+											 </table>
+								</div>
+							</div>	
+      </div>
+    </div>
+  </div>
+</div>

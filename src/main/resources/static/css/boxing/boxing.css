@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.aboutBoxing-title{
+	font-family: 'Bazzi';
+	margin : 2rem 3rem 0 4rem;
+	font-size: 40px;
+}
+
+@media screen and (max-width: 767px){
+	.aboutBoxing-title{
+		font-family: 'Bazzi';
+		margin : 3rem 3rem 0 3rem;
+		font-size: 34px;
+	}
+}
+
+.aboutBoxing-card{
+	margin-top:50px;
+	margin-left:50px;
+	max-width: 1300px;
+}
+
+@media screen and (max-width: 767px){
+	.aboutBoxing-card{
+		margin:20px;
+	}
+}
+
+.aboutBoxing-card-title{
+	font-family: 'Bazzi';
+	font-size:30px !important;
+}
+
+.aboutBoxing-title.sub{
+	font-size: 17px;
+	margin-top : 1rem;
+	margin-bottom: 3rem;
+	margin-left: 4rem;
+}
+
+.boxingDescription p{
+	font-family: 'NEXON Lv1 Gothic OTF';
+	font-size:15px;
+}
+
+.boxingDescription b.pro-bold{
+	color:red; opacity: 0.8
+}
+
+.boxingDescription b.ama-bold{
+	color:blue; opacity: 0.8
+}
+
+.boxingDescription table th, .boxingDescription table td{
+	font-family: 'NEXON Lv1 Gothic OTF';
+	font-size:15px;
+}
+.boxingDescription table th{
+	text-align: center;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 767px){
+	.boxingDescription table td{
+		padding:10px !important;
+	}
+}

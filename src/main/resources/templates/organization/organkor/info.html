@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta th:replace="/common/commonHead" />
+</head>
+<body>
+	<div class="wrapper">
+		<!-- TopHeader -->
+		<div th:replace="/common/commonHeaderBar" ></div>
+		<!-- LeftNaviBar -->
+		<div th:replace="/common/commonLeftNaviBar" ></div>
+
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="panel-header bg-dark-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">국내 복싱 통합시스템</h2>
+								<h5 class="text-white op-7 mb-2">국내 복싱의 데이터를 제공</h5>
+							</div>
+							<div class="ml-md-auto py-2 py-md-0">
+								<a href="#" class="btn btn-white btn-border btn-round mr-2">아무기능없음</a>
+								<a href="#" class="btn btn-secondary btn-round">아무기능없음</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner mt--5">
+					<!-- 컨텐츠 내용 입력 -->
+				</div>
+			</div>
+			<footer th:replace="/common/commonFooter.html"></footer> 
+		</div>
+	</div>
+</body>
+</html>

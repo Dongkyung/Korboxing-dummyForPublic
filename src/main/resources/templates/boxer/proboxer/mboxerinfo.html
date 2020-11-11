@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta th:replace="/common/commonHead"/>
+<link rel="stylesheet" href="/css/boxer/boxer.css" />
+</head>
+<body>
+<div class="wrapper">
+	<!-- TopHeader -->
+	<div th:replace="/common/commonHeaderBar">
+	</div>
+	<!-- LeftNaviBar -->
+	<div th:replace="/common/commonLeftNaviBar">
+	</div>
+	<div class="main-panel">
+		<div class="content">
+			<div class="panel-header bg-dark-gradient">
+				<div class="page-inner">
+					<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+						<div>
+							<h2 class="text-white pb-2 fw-bold">남자 프로선수</h2>
+							<h5 class="text-white op-7 mb-2">국내 프로선수</h5>
+						</div>
+						<ul class="breadcrumbs">
+							<li class="nav-home"><a href="/"><i class="flaticon-home text-light op-5"></i></a></li>
+							<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+							<li class="nav-item text-white"><a class="text-light op-5">국내 프로선수</a></li>
+							<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+							<li class="nav-item"><a href="/boxer/proboxer/mboxerinfo" class="text-light op-5">남자 프로선수</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="page-inner">
+				<div class="row">
+					<div class="col-md-12 boxerList-main1">
+						<div class="card">
+							<div class="card-body boxerList-main2">
+								<div th:replace="/boxer/boxerSearchList">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer th:replace="/common/commonFooter.html"></footer>
+	</div>
+</div>
+
+<!-- init Thymeleaf Value to Javscript -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+let statusValue = /*[[${status}]]*/'';
+/*]]>*/
+</script>
+
+
+<!-- Datatables -->
+<script src="/js/plugin/datatables/datatables.min.js"></script>
+<!--  BoxerList JS -->
+<script th:inline="javascript"  th:src="@{/js/boxer/boxerList.js}"></script>
+
+
+
+</body>
+</html>

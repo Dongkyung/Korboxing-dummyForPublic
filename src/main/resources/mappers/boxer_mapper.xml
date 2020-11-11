@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.box.korBoxing.dao.BoxerDAO">
+	
+	<select id="getboxerTotalCount" parameterType="pagingVO" resultType="_int">
+
+	</select>
+
+	
+	<select id="getActiveBoxerList" parameterType="map" resultType="boxerListVO">
+			SELECT Cast(Substring_index(t1.korea_rank, '/', 1) AS UNSIGNED) 
+			       AS 
+			       korea_rank,
+                   t1.division, 
+			       t1.boxer_id,
+			       t1.boxer_name as boxer_name_eng, 
+			       trans_n.boxer_name_kor AS boxer_name_kor, 
+			       
+			       t1.win, 
+			       t1.lose, 
+			       t1.draw,
+			       "현역" 
+			       AS status,
+			       IF(trans_n.boxer_name_kor IS NULL, "N", "Y") AS istranslated,
+			       date_format(t1.lsttm,'%y-%m-%d') as lsttm
+			FROM   (SELECT 
+			               boxer.korea_rank, 
+			               boxer.boxer_id, 
+			               boxer.boxer_name, 
+			               trans_d.division_kor                                        AS 
+			               division, 
+			               boxer.win, 
+			               boxer.lose, 
+			               boxer.draw, 
+			               boxer.debut, 
+			               boxer.born,
+			               CASE( boxer.status ) 
+			                 WHEN 'active' THEN '현역' 
+			                 WHEN 'inactive' THEN '은퇴' 
+			               END                                                         AS 
+			               STATUS,
+			               boxer.sex,
+                           boxer.lsttm
+			        FROM   tb_boxer_boxrec AS boxer, 
+			               tb_trans_division AS trans_d
+			        WHERE
+			        1=1
+			        <if test='!division.equals("all")'>
+   						AND boxer.division = #{division}
+					</if>
+			        	  
+			               AND boxer.division = trans_d.division_eng 
+			               AND status = 'active'
+                           AND sex = #{sex}) AS t1 
+			       left join tb_trans_boxername AS trans_n 
+			              ON t1.boxer_id = trans_n.boxer_id 
+						ORDER  BY korea_rank ASC; 
+				
+	</select>
+	
+	
+	<select id="getActiveBoxerCount" parameterType="pagingVO" resultType="_int">
+	</select>
+	
+	
+	<select id="getInactiveBoxerList" parameterType="map" resultType="boxerListVO">
+		SELECT
+       CAST(t3.korea_rank AS UNSIGNED) as korea_rank, 
+       t3.division, 
+       t3.boxer_id, 
+       t3.boxer_name     AS boxer_name_eng, 
+       t3.boxer_name_kor AS boxer_name_kor, 
+       
+       t3.win, 
+       t3.lose, 
+       t3.draw, 
+       t3.status, 
+       t3.istranslated, 
+       date_format(t3.lsttm,'%y-%m-%d') as lsttm
+FROM  (SELECT
+              t2.*, 
+              trans_n.boxer_name_kor 
+                    AS boxer_name_kor, 
+              IF(trans_n.boxer_name_kor IS NULL, "N", "y") 
+                    AS istranslated 
+       FROM   (SELECT
+                      boxer.korea_rank, 
+                      boxer.boxer_id, 
+                      boxer.boxer_name, 
+                      trans_d.division_kor                       AS division, 
+                      boxer.win, 
+                      boxer.lose, 
+                      boxer.draw, 
+                      CASE( boxer.status ) 
+                        WHEN 'active' THEN '현역' 
+                        WHEN 'inactive' THEN '은퇴' 
+                      end                                        AS STATUS, 
+                      boxer.lsttm
+               FROM   tb_boxer_boxrec AS boxer, 
+                      tb_trans_division AS trans_d 
+               WHERE
+               		1=1 
+               		 <if test='!division.equals("all")'>
+   						AND boxer.division = #{division}
+					</if>
+                      AND boxer.division = trans_d.division_eng 
+                      AND status = 'inactive'
+                      AND sex =#{sex}) AS t2 
+              LEFT JOIN tb_trans_boxername AS trans_n 
+                     ON t2.boxer_id = trans_n.boxer_id
+				) AS t3
+ORDER by korea_rank;
+
+	</select>
+	
+	
+		<select id="getInactiveBoxerCount" parameterType="pagingVO" resultType="_int">
+	</select>
+	
+	
+
+	<select id="getBoxerListForTranslate" parameterType="string" resultType="boxerListVO">
+						
+           SELECT Cast(Substring_index(t1.korea_rank, '/', 1) AS UNSIGNED) 
+			       AS 
+			       ranking, 
+			       t1.korea_rank, 
+			       t1.boxer_id,
+			       t1.boxer_name as boxer_name_eng, 
+			       trans_n.boxer_name_kor AS boxer_name_kor, 
+			       t1.division, 
+			       t1.win, 
+			       t1.lose, 
+			       t1.draw, 
+			       t1.debut, 
+			       t1.born, 
+			       "현역" 
+			       AS status,
+			       IF(trans_n.boxer_name_kor IS NULL, "N", "Y") AS istranslated,
+			       t1.sex 
+			FROM   (SELECT Cast(Substring_index(boxer.korea_rank, '/', 1) AS UNSIGNED) AS 
+			               ranking, 
+			               boxer.korea_rank, 
+			               boxer.boxer_id, 
+			               boxer.boxer_name, 
+			               trans_d.division_kor                                        AS 
+			               division, 
+			               boxer.win, 
+			               boxer.lose, 
+			               boxer.draw, 
+			               boxer.debut, 
+			               boxer.born, 
+			               CASE( boxer.status ) 
+			                 WHEN 'active' THEN '현역' 
+			                 WHEN 'inactive' THEN '은퇴' 
+			               END                                                         AS 
+			               STATUS,
+			               boxer.sex
+			        FROM   tb_boxer_boxrec AS boxer, 
+			               tb_trans_division AS trans_d 
+			        WHERE  boxer.division = #{division} 
+			               AND boxer.division = trans_d.division_eng 
+			               AND status = 'active') AS t1 
+			       left join tb_trans_boxername AS trans_n 
+			              ON t1.boxer_id = trans_n.boxer_id 
+			UNION 
+			SELECT CAST(t3.ranking AS UNSIGNED),
+       t3.korea_rank, 
+       t3.boxer_id, 
+       t3.boxer_name     AS boxer_name_eng, 
+       t3.boxer_name_kor AS boxer_name_kor, 
+       t3.division, 
+       t3.win, 
+       t3.lose, 
+       t3.draw, 
+       t3.debut, 
+       t3.born, 
+       t3.status, 
+       t3.istranslated, 
+       t3.sex 
+FROM  (SELECT @rankk := IF(@bf_user_point = t2.temp_point, @rankk, @rankk + 
+                              @same_point_cnt) 
+                    AS ranking, 
+              @same_point_cnt := IF(@bf_user_point = t2.temp_point, 
+                                 @same_point_cnt + 1, 1) AS 
+              CNT, 
+              @bf_user_point := t2.temp_point, 
+              t2.*, 
+              trans_n.boxer_name_kor 
+                    AS boxer_name_kor, 
+              IF(trans_n.boxer_name_kor IS NULL, "n", "y") 
+                    AS istranslated 
+       FROM   (SELECT ( Cast(boxer.win AS signed) - Cast(boxer.lose AS signed) ) 
+                      * 2 + 
+                                      Cast(boxer.draw AS signed) AS temp_point, 
+                      boxer.korea_rank, 
+                      boxer.boxer_id, 
+                      boxer.boxer_name, 
+                      trans_d.division_kor                       AS division, 
+                      boxer.win, 
+                      boxer.lose, 
+                      boxer.draw, 
+                      boxer.debut, 
+                      boxer.born, 
+                      CASE( boxer.status ) 
+                        WHEN 'active' THEN '현역' 
+                        WHEN 'inactive' THEN '은퇴' 
+                      end                                        AS STATUS, 
+                      boxer.sex 
+               FROM   tb_boxer_boxrec AS boxer, 
+                      tb_trans_division AS trans_d 
+               WHERE
+               		1=1 
+               		  AND boxer.division = #{division} 
+                      AND boxer.division = trans_d.division_eng 
+                      AND status = 'inactive') AS t2 
+              LEFT JOIN tb_trans_boxername AS trans_n 
+                     ON t2.boxer_id = trans_n.boxer_id, 
+              (SELECT @rankk := 0, 
+                      @bf_user_point := 0, 
+                      @same_point_cnt := 1, 
+                      @rownum := 0) A 
+				ORDER  BY t2.temp_point DESC) AS t3
+			
+			ORDER  BY status DESC, 
+			          ranking ASC; 
+	</select>
+	
+	
+	<select id="getBoxerDetail" parameterType="string" resultType="boxerDetailVO">
+		select
+ trans_n.boxer_name_kor AS boxer_name_kor,
+ t1.*
+from(
+	SELECT
+			boxer.sex,
+		    boxer.boxer_name AS boxer_name_eng,
+		    trans_d.division_kor AS division, 
+		    boxer.flag,
+		    boxer.points,
+		    boxer.win,
+		    boxer.lose,
+		    boxer.draw,
+		    boxer.career,
+		    boxer.residence,
+		    boxer.boxer_id,
+		    boxer.rating,
+		    boxer.world_rank,
+		   boxer. korea_rank,
+		   boxer.bouts,
+		   boxer.rounds,
+		    boxer.KOs,
+		    boxer.status,
+		    boxer.born,
+		    boxer.nationality,
+		    boxer.debut,
+		    boxer.stance,
+		    boxer.height,
+		    boxer.hym,
+		    boxer.commission,
+		    boxer.fsttm,
+		    date_format( boxer.lsttm,'%Y-%m-%d') as lsttm
+		FROM
+			tb_boxer_boxrec as boxer,
+		    tb_trans_division AS trans_d
+		WHERE
+			boxer.boxer_id = #{boxerId}
+			AND boxer.division = trans_d.division_eng 
+) as t1
+left join tb_trans_boxername AS trans_n 
+			ON t1.boxer_id = trans_n.boxer_id;
+	</select>
+	
+	
+	
+<select id="getBoutDetail" parameterType="string" resultType="boutDetailVO">	
+	select
+		t2.*,
+		date_format(t2.lsttm,'%y-%m-%d') AS lsttmF
+	    , trans_n.boxer_name_kor as opponentNameKor
+	from(
+		select
+			t1.*
+	        , trans_n.boxer_name_kor as targetNameKor
+		from(
+			select 
+				*
+			from
+				tb_bout_boxrec
+			where targetId=#{boxerId}
+		) as t1
+		left join tb_trans_boxername AS trans_n 
+		ON t1.targetId = trans_n.boxer_id
+	) as t2
+	left join tb_trans_boxername AS trans_n 
+	ON t2.opponentId = trans_n.boxer_id
+	order by t2.boutDate desc
+</select>
+
+
+	<insert id="insertTranslate" parameterType="hashmap" >
+		INSERT INTO tb_trans_support(mode,boxer_id,boxer_name_eng,boxer_name_kor,isttm) values (#{mode},#{boxerId},#{boxerNameEng},#{boxerNameKor},now());
+	</insert>
+	
+</mapper>

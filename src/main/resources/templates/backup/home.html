@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:replace="/common/header" />
+</head>
+<body>
+<div id="wrap">
+	<div th:replace="/common/contact_us_popup"></div>
+	<div th:replace="/common/sitemap"></div>
+    <div th:replace="/common/content_header"></div>
+<!--     <div th:replace="/common/m_content_header"></div> -->
+<!-- 	<aside th:replace="/common/aside"></aside> -->
+
+    <container>
+<!--         <div class="main_banner"> -->
+<!--             <ul id="rolling-banner" class="rel"> -->
+<!--                 <li class="m_banner01"> -->
+<!--                     <div class="banner_box"> -->
+<!--                         <span class="title">정보와 기술 그리고 사람이 중심인 플랫폼</span> -->
+<!--                         <span class="title_img"><img src="/images/main/main_banner1_img1.png" alt="main banner1" /></span> -->
+<!--                         <span class="text"> -->
+<!--                         아로정보기술은 다양한 데이터를 수집·가공하여 정보를 제공합니다.<br /> -->
+<!--                         정보는 사람으로 이어지며 사람은 또 다른 정보를 창출합니다.<br /> -->
+<!--                         아로정보기술은 '정보와 기술 그리고 사람이 중심인 플랫폼'이<br /> -->
+<!--                         더 편리한 세상을 만드는 길이라 믿습니다. -->
+<!--                         </span> -->
+<!--                         <a href="/company/about" class="btn_white">자세히보기</a>               -->
+<!--                     </div> -->
+<!--                 </li> -->
+<!--                 <li class="m_banner02"> -->
+<!--                     <div class="banner_box"> -->
+<!--                         <span class="title">대중교통정보 1등 브랜드</span> -->
+<!--                         <span class="title_img"><img src="/images/main/main_banner2_img1.png" alt="main banner2" /></span> -->
+<!--                         <span class="text"> -->
+<!--                         Origin(출발지)와 Destination(도착지) 이들의 경로를 말하는 Say(말하다)<br /> -->
+<!--                         바로 여러분들의 여정을 알려주는 ODsay입니다.<br /> -->
+<!--                         오디세이는 당신이 원하는 여정을 함께하고 있습니다. -->
+<!--                         </span> -->
+<!--                         <a href="/business/pt" class="btn_white">자세히보기</a>               -->
+<!--                     </div> -->
+<!--                 </li> -->
+<!--                 <li class="m_banner03"> -->
+<!--                     <div class="banner_box_bk"> -->
+<!--                         <span class="title">지리산권 통합 서비스,  지리산 休제작소</span> -->
+<!--                         <span class="title_img"><img src="/images/main/main_banner3_img1.png" alt="main banner3" /></span> -->
+<!--                         <span class="text"> -->
+<!-- 						지리산권 통합 서비스를 위해 지리산 둘레길 3코스 시작인 남원 인월에<br /> -->
+<!--                         지리산 休제작소가 위치하고 있습니다.<br /> -->
+<!--                         지리산 休제작소에서 지리산 여행, 숙박, 특산물 등 지리산의 모든 것을 찾아가세요. -->
+<!--                         </span> -->
+<!--                         <a href="/business/huemaker" class="btn_white">자세히보기</a>               -->
+<!--                     </div> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--             <div id="dot-container" class="scrolling"> -->
+<!--                 <a href="#" onclick="rollingBanner.clear();rollingBanner.start(3000, 0);return false;" class="on"></a> -->
+<!--                 <a href="#" onclick="rollingBanner.clear();rollingBanner.start(3000, 1);return false;"></a> -->
+<!--                 <a href="#" onclick="rollingBanner.clear();rollingBanner.start(3000, 2);return false;"></a> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--         <script> -->
+<!-- //         	function RollingBanner(rollingBannerContainer, dotContainer) { -->
+<!-- //         		this.container = rollingBannerContainer; -->
+<!-- //         		this.dots = $(dotContainer).children(); -->
+<!-- //         		this.currentIndex = 0; -->
+<!-- //         		this.banners = $(this.container).children(); -->
+<!-- //         		this.bannerLength = this.banners.length; -->
+<!-- //         		this.bannerHeight = $(rollingBannerContainer).height(); -->
+<!-- //         		this.timer; -->
+<!-- //         		this.clear = function() { -->
+<!-- //         			if (this.timer) { -->
+<!-- //         				clearTimeout(this.timer); -->
+<!-- //         			} -->
+<!-- //         		} -->
+<!-- //         		this.next = function(interval) { -->
+<!-- //         			var that = this; -->
+<!-- //         			var index = 0; -->
+<!-- //         			var animationTime = 800; -->
+        			
+<!-- //         			$(rollingBannerContainer).animate({top: '-=' + this.bannerHeight + 'px'}, animationTime, function() { -->
+<!-- //         				$(this).css('top', 0); -->
+<!-- //         				var ul = that.container; -->
+<!-- //         				$(that.dots[that.currentIndex]).removeClass(); -->
+<!-- //         				$(ul).append($(that.banners[that.currentIndex++])); -->
+        				
+<!-- //        					if (that.currentIndex >= that.bannerLength) { -->
+<!-- //        						that.currentIndex = 0; -->
+<!-- //        					} -->
+       					
+<!-- //        					$(that.dots[that.currentIndex]).addClass('on'); -->
+       					
+<!-- //        					that.timer = setTimeout(function() { -->
+<!-- //        						that.next(interval); -->
+<!-- //        					}, interval + animationTime); -->
+<!-- //         			}); -->
+<!-- //         		}; -->
+<!-- //         		this.start = function(interval, index) { -->
+<!-- //         			var that = this; -->
+        			
+<!-- //         			if (typeof index !== 'undefined' && typeof index !== 'null') { -->
+<!-- //         				$(this.dots).removeClass(); -->
+<!-- //         				that.currentIndex = index; -->
+<!-- //         				$(this.dots[index]).addClass('on'); -->
+        				
+<!-- //         				if (that.currentIndex - 1 < 0) { -->
+<!-- //         					$(that.container).append($(that.banners[that.banners.length - 1])); -->
+<!-- //         				} else { -->
+<!-- //         					$(that.container).append($(that.banners[that.currentIndex - 1])); -->
+<!-- //         				} -->
+        				
+<!-- //         			} -->
+        			
+<!-- //         			that.timer = setTimeout(function() { -->
+<!-- //         				that.next(interval); -->
+<!-- //         			}, interval); -->
+<!-- //         		}; -->
+<!-- //         	}; -->
+        	
+<!-- //         	var rollingBannerContainer = document.getElementById('rolling-banner'); -->
+<!-- //         	var dotContainer = document.getElementById('dot-container'); -->
+<!-- //         	var rollingBanner = new RollingBanner(rollingBannerContainer, dotContainer); -->
+<!-- //         	rollingBanner.start(3000); -->
+<!--         </script> -->
+        <div class="main_section">
+            <article>
+                <div class="main_title1">복싱 <span class="t_yell">통합 커뮤니티</span>
+                    <sub>아 재밌다 진짜</sub>
+                </div>
+                <p class="t_center">진짜너무재밌다 재밌다 재밌다 너무재밌어서신난다</p>
+                <div class="platform_img"></div>
+                <div class="platform_text">
+                    <span class="sub_title">귀여운<sub><br> ㅇㅇ설명설명설명설명</sub></span>
+                    <span class="sub_title">아기공룡<sub>ㅇㅇ설명설명설명설명<br> ㅇㅇ설명설명설명설명ㅇㅇ설명설명설명설명</sub></span>
+                    <span class="sub_title">둘리<sub>ㅇㅇ설명설명설명설명ㅇㅇㅇ<br> ㅇㅇ설명설명설명설명</sub></span>
+                </div>
+            </article>       
+        </div>
+        
+<!--         <div class="bg_gray"> -->
+<!--             <div class="main_section"> -->
+<!--                 <article> -->
+<!--                     <div class="main_title1">ARO InTech <span class="t_yell">Business</span></div> -->
+<!--                     <p class="t_center">아로정보기술은 대중교통정보, 여행, 문화관광시스템 전문 업체입니다.</p> -->
+<!--                 </article>                            -->
+<!--             </div> -->
+<!--             <ul class="business_banner"> -->
+<!--                 <li class="banner1"> -->
+<!--                     <a href="/business/pt"> -->
+<!--                         <span class="main_title">대중교통 서비스</span> -->
+<!--                         <span class="main_title_on">대중교통 서비스<sub>보다 정확하고 보다 편리하게<br> 대중교통 정보를 제공합니다.</sub> -->
+<!--                         <span class="btn_plus"></span> -->
+<!--                         </span> -->
+<!--                         <span class="bg_on"></span> -->
+<!--                         <span class="bg"></span>                  -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li class="banner2"> -->
+<!--                     <a href="/business/huemaker">  -->
+<!--                         <span class="main_title">지리산 休제작소</span> -->
+<!--                         <span class="main_title_on">지리산 休제작소<sub>지리산권 여행, 숙박, 특산물 구매 등<br> 다양한 서비스를 제공합니다.</sub> -->
+<!--                         <span class="btn_plus"></span> -->
+<!--                         </span> -->
+<!--                         <span class="bg_on"></span> -->
+<!--                         <span class="bg"></span>                 -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li class="banner3"> -->
+<!--                     <a href="/business/contents"> -->
+<!--                         <span class="main_title">문화관광시스템</span> -->
+<!--                         <span class="main_title_on">문화관광시스템<sub>지자체 관광 콘텐츠 구축 및<br> 문화관광 웹사이트 등을 제공합니다.</sub> -->
+<!--                         <span class="btn_plus"></span> -->
+<!--                         </span> -->
+<!--                         <span class="bg_on"></span> -->
+<!--                         <span class="bg"></span>                 -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul>  -->
+<!--         </div> -->
+        
+<!--         <div class="main_section"> -->
+<!--             <article> -->
+<!--                 <div class="news_title">News</div> -->
+<!--                 <ul class="news_post"> -->
+<!--                 	<li th:each="item : ${viewContent}"> -->
+<!--                 		<a th:href="|/media/viewNews?seq=${item.seq}|"> -->
+<!-- 							<span class="title" th:text="${item.title}"></span> -->
+<!--                             <p th:utext="|${#strings.substring(item.content, 0, item.content.length() < 150 ? item.content.length() : 150)}...|"></p> -->
+<!--                             <span class="btn_plus"></span> -->
+<!--                 		</a> -->
+<!--                 	</li> -->
+<!--                 </ul> -->
+<!--                 <ul class="main_link"> -->
+<!--                     <li><a href="/media/news"><span class="icon_mic"></span>홍보센터 <sub>바로가기</sub></a></li> -->
+<!--                     <li><a href="https://drive.google.com/open?id=1nnRAb4YPQDwFcmQvGAXggKg7CKx2LCsv" target="_blank"><span class="icon_down"></span>회사소개서 <sub>다운로드</sub></a></li> -->
+<!--                     <li><a href="#" onclick="aro.contactUs();$('#inquiry-category').find('a:eq(0)').addClass('on');return false;"><span class="icon_contact"></span>Contact Us <sub>문의하기</sub></a></li> -->
+<!--                 </ul> -->
+<!--             </article> -->
+<!--         </div> -->
+    </container>
+
+	<footer th:replace="/common/footer"></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<nav>
+	<ul id="pagenation" class="pagination pagination-sm">
+		<li>
+			<a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		<li th:unless="${paging.startPageNo == 0}">
+			<a href="#">1</a>
+		</li>
+		<li class="disabled" th:unless="${paging.startPageNo == 0}">
+			<a href="#">...</a>
+		</li>
+		<li th:class="${paging.pageNo == paging.number} ? active : ''" th:each="pageNo : ${#numbers.sequence(paging.startPageNo, 0 > paging.endPageNo - 1 ? 0 : paging.endPageNo - 1)}">
+			<a href="#" th:text="${pageNo + 1}">1</a>
+		</li>
+		<li  class="disabled" th:unless="${paging.endPageNo == paging.totalPages}">
+			<a href="#" onclick="return false;">...</a>
+		</li>
+		<li th:unless="${paging.endPageNo == paging.totalPages}">
+			<a href="#" th:text="${paging.totalPages}" >1</a>
+		</li>
+		<li>
+			<a href="#" aria-label="Next" >
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<!-- <script src="js/paging.js"></script> -->
+
+
+
+<!-- <li> -->
+<!-- 			<a href="#" aria-label="Previous" th:onclick="|paging.previousPage(${paging.hasPrevious()}, ${paging.number})|"> -->
+<!-- 				<span aria-hidden="true">&laquo;</span> -->
+<!-- 			</a> -->
+<!-- 		</li> -->
+<!-- 		<li th:unless="${paging.startPageNo == 0}"> -->
+<!-- 			<a href="#" onclick="paging.movePage(0);return false;">1</a> -->
+<!-- 		</li> -->
+<!-- 		<li class="disabled" th:unless="${paging.startPageNo == 0}"> -->
+<!-- 			<a href="#" onclick="return false;">...</a> -->
+<!-- 		</li> -->
+<!-- 		<li th:class="${pageNo == paging.number} ? active : ''" th:each="pageNo : ${#numbers.sequence(paging.startPageNo, 0 > paging.endPageNo - 1 ? 0 : paging.endPageNo - 1)}"> -->
+<!-- 			<a href="#" th:text="${pageNo + 1}" th:onclick="|paging.movePage(${pageNo});return false;|">1</a> -->
+<!-- 		</li> -->
+<!-- 		<li  class="disabled" th:unless="${paging.endPageNo == paging.totalPages}"> -->
+<!-- 			<a href="#" onclick="return false;">...</a> -->
+<!-- 		</li> -->
+<!-- 		<li th:unless="${paging.endPageNo == paging.totalPages}"> -->
+<!-- 			<a href="#" th:text="${paging.totalPages}" th:onclick="|paging.movePage(${paging.totalPages - 1});return false;|">1</a> -->
+<!-- 		</li> -->
+<!-- 		<li> -->
+<!-- 			<a href="#" aria-label="Next" th:onclick="|paging.nextPage(${paging.hasNext()}, ${paging.number})|"> -->
+<!-- 				<span aria-hidden="true">&raquo;</span> -->
+<!-- 			</a> -->
+<!-- 		</li> -->

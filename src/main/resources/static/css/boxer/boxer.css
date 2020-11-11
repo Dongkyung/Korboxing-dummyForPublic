@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.boxerListTable td, .boxerListTable th{
+	padding:0px !important;
+	font-size: 13px;
+	text-align: center;
+}
+
+.boxerListTable td.boxerName{
+	font-weight:bold;
+}
+
+
+.dataTable > thead > tr > th[class*="sort"]:before,
+.dataTable > thead > tr > th[class*="sort"]:after {
+    content: "" !important;
+}
+
+
+.state_label_active{
+	color : #fff !important;
+	opacity: 0.7;
+	cursor:default !important;
+}
+
+.state_label_inactive{
+	font-size: 11px !important;
+	color : #212529 !important;
+	opacity: 0.7;
+	cursor:default !important;
+}
+
+@media screen and (max-width: 767px){
+	div.boxerList-main1, div.boxerList-main2{
+		padding:0px !important;
+	}
+	
+	div#search_status, div#search_division{
+	    text-align: center;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	}
+	
+	div#boxerListTable_wrapper{
+		padding:3px;
+	}
+}
+
+.boxerWarning{
+	font-size:11px;
+	display: inline-block;
+	color:#ff4f4f;
+	margin-top:10px;
+	margin-left:10px;
+}
+.boxerWarning.mobile{
+	display:none;
+}
+
+@media screen and (max-width: 767px){
+	.boxerWarning.pc{
+		display:none;
+	}
+	.boxerWarning.mobile{
+		display: block;
+		position:relative;
+		text-align:center;
+	}
+}

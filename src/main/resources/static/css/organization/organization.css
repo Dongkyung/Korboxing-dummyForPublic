@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+
+.organization_champ_body{
+	width:1600px;
+	overflow: auto;
+}
+
+.organization_champ_body .card-body{
+	width:1600px;
+	overflow: auto;
+}
+
+
+.chkItem{
+	margin:0px 30px !important;
+}
+
+@media screen and (max-width: 767px){
+	.chkItem{
+		margin:0px 10px !important;
+	}
+}
+
+
+.chp_tb td, .chp_tb th{
+	padding:6px !important;
+	text-align:center;
+	width:5.5%;
+}
+
+.selectgroup-button{
+	margin-top:5px;
+	margin-bottom: 10px;
+}

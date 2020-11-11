@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
+	
+	<typeAliases>
+		<typeAlias alias="pagingVO" type="com.box.korBoxing.vo.PagingVO"/>
+		<typeAlias alias="boxerListVO" type="com.box.korBoxing.vo.BoxerListVO"/>
+		<typeAlias alias="boxerDetailVO" type="com.box.korBoxing.vo.BoxerDetailVO"/>
+		<typeAlias alias="boutDetailVO" type="com.box.korBoxing.vo.BoutDetailVO"/>
+<!-- 		<typeAlias alias="adminVO" type="com.arointech.vo.admin.AdminVO"/> -->
+<!-- 		<typeAlias alias="businessVO" type="com.arointech.vo.business.BusinessContentVO"/> -->
+<!-- 		<typeAlias alias="newsVO" type="com.arointech.vo.media.NewsVO"/> -->
+<!-- 		<typeAlias alias="stockVO" type="com.arointech.vo.media.StockVO"/> -->
+		<typeAlias alias="inquiryVO" type="com.box.korBoxing.vo.InquiryVO"/>
+		<typeAlias alias="boxerRankVO_bot" type="com.box.korBoxing.vo.bot.BoxerRankVO_bot"/>
+		<typeAlias alias="boxerInfoVO_bot" type="com.box.korBoxing.vo.bot.BoxerInfoVO_bot"/>
+	</typeAliases>
+	
+</configuration>

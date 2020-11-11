@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta th:replace="/common/commonHead" />
+	<link rel="stylesheet" href="/css/organization/organization.css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- TopHeader -->
+		<div th:replace="/common/commonHeaderBar" ></div>
+		<!-- LeftNaviBar -->
+		<div th:replace="/common/commonLeftNaviBar" ></div>
+
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="panel-header bg-dark-gradient">
+					<div class="page-inner">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">체급별 챔피언</h2>
+								<h5 class="text-white op-7 mb-2">국내 협회</h5>
+							</div>
+							<ul class="breadcrumbs">
+								<li class="nav-home"><a href="/"><i class="flaticon-home text-light op-5"></i></a></li>
+								<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+								<li class="nav-item text-white"><a class="text-light op-5">국내 협회</a></li>
+								<li class="separator"><i class="flaticon-right-arrow text-light op-5"></i></li>
+								<li class="nav-item"><a href="/organization/organkor/champ" class="text-light op-5">체급별 챔피언</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner">
+					<div class="row">
+						<div class="card organization_champ_body">
+							<div class="card-header" style="text-align: center;">
+							
+							
+								<div class="selectgroup selectgroup-pills">
+										<label class="selectgroup-item chkItem" onclick="showHideOrgaChap();">
+											<img src="/img/common/logo/orga_logo/KBC.jpg" width="80px" height="80px">
+											<input type="checkbox" name="value" value="kbc" class="selectgroup-input orgaChkbox" id="orgaChkbox_KBC">
+											<span class="selectgroup-button">KBC</span>
+										</label>
+										<label class="selectgroup-item chkItem" onclick="showHideOrgaChap();">
+											<img src="/img/common/logo/orga_logo/KBF.jpg" width="80px" height="80px">
+											<input type="checkbox" name="value" value="kbf" class="selectgroup-input orgaChkbox" id="orgaChkbox_KBF">
+											<span class="selectgroup-button">KBF</span>
+										</label>
+										<label class="selectgroup-item chkItem" onclick="showHideOrgaChap();">
+											<img src="/img/common/logo/orga_logo/KPBF.jpg" width="80px" height="80px">
+											<input type="checkbox" name="value" value="kpbf" class="selectgroup-input orgaChkbox" id="orgaChkbox_KPBF">
+											<span class="selectgroup-button">KPBF</span>
+										</label>
+								</div>
+								<div class="selectgroup selectgroup-pills">
+										<label class="selectgroup-item chkItem" onclick="showHideOrgaChap();">
+											<img src="/img/common/logo/orga_logo/KBA.jpg" width="80px" height="80px">
+											<input type="checkbox" name="value" value="kba" class="selectgroup-input orgaChkbox" id="orgaChkbox_KBA">
+											<span class="selectgroup-button">KBA</span>
+										</label>
+										<label class="selectgroup-item chkItem" onclick="showHideOrgaChap();">
+											<img src="/img/common/logo/orga_logo/KBM.jpg" width="80px" height="80px">
+											<input type="checkbox" name="value" value="kbm" class="selectgroup-input orgaChkbox" id="orgaChkbox_KBM">
+											<span class="selectgroup-button">KBM</span>
+										</label>
+								</div>
+								
+								
+							</div>
+							<div class="card-body">
+									<table class="table chp_tb">
+										<tr>
+											<th></th>
+											<th>헤비급</th>
+											<th>크루저급</th>
+											<th>L. 헤비급</th>
+											<th>S. 미들급</th>
+											<th>미들급</th>
+											<th>S. 웰터급</th>
+											<th>웰터급</th>
+											<th>S. 라이트급</th>
+											<th>라이트급</th>
+											<th>S. 패더급</th>
+											<th>패더급</th>
+											<th>S. 벤텀급</th>
+											<th>벤텀급</th>
+											<th>S. 플라이급</th>
+											<th>플라이급</th>
+											<th>L. 플라이급</th>
+											<th>미니멈급</th>
+										</tr>
+										<tr id="chp_tr_kbc">
+											<td>
+												<img src="/img/common/logo/orga_logo/KBC.jpg" width="50px" height="50px">
+												<label style="font-weight:bold;">KBC</label>
+											</td>
+											<td class="chp_heavyweight"></td>
+											<td class="chp_cruiserweight"></td>
+											<td class="chp_light_heavyweight"></td>
+											<td class="chp_super_middleweight"></td>
+											<td class="chp_middleweight"></td>
+											<td class="chp_super_welterweight"></td>
+											<td class="chp_welterweight"></td>
+											<td class="chp_super_lightweight"></td>
+											<td class="chp_lightweight"></td>
+											<td class="chp_super_featherweight"></td>
+											<td class="chp_featherweight"></td>
+											<td class="chp_super_bantamweight"></td>
+											<td class="chp_bantamweight"></td>
+											<td class="chp_super_flyweight"></td>
+											<td class="chp_flyweight"></td>
+											<td class="chp_light_flyweight"></td>
+											<td class="chp_minimumweight"></td>
+										</tr>
+										<tr id="chp_tr_kbf" >
+											<td>
+												<img src="/img/common/logo/orga_logo/KBF.jpg" width="50px" height="50px">
+												<label style="font-weight:bold;">KBF</label>
+											</td>
+											<td class="chp_heavyweight"></td>
+											<td class="chp_cruiserweight"></td>
+											<td class="chp_light_heavyweight"></td>
+											<td class="chp_super_middleweight"></td>
+											<td class="chp_middleweight"></td>
+											<td class="chp_super_welterweight"></td>
+											<td class="chp_welterweight"></td>
+											<td class="chp_super_lightweight"></td>
+											<td class="chp_lightweight"></td>
+											<td class="chp_super_featherweight"></td>
+											<td class="chp_featherweight"></td>
+											<td class="chp_super_bantamweight"></td>
+											<td class="chp_bantamweight"></td>
+											<td class="chp_super_flyweight"></td>
+											<td class="chp_flyweight"></td>
+											<td class="chp_light_flyweight"></td>
+											<td class="chp_minimumweight"></td>
+										</tr>
+										<tr id="chp_tr_kpbf">
+											<td>
+												<img src="/img/common/logo/orga_logo/KPBF.jpg" width="50px" height="50px">
+												<label style="font-weight:bold;">KPBF</label>
+											</td>
+											<td class="chp_heavyweight"></td>
+											<td class="chp_cruiserweight"></td>
+											<td class="chp_light_heavyweight"></td>
+											<td class="chp_super_middleweight"></td>
+											<td class="chp_middleweight"></td>
+											<td class="chp_super_welterweight"></td>
+											<td class="chp_welterweight"></td>
+											<td class="chp_super_lightweight"></td>
+											<td class="chp_lightweight"></td>
+											<td class="chp_super_featherweight"></td>
+											<td class="chp_featherweight"></td>
+											<td class="chp_super_bantamweight"></td>
+											<td class="chp_bantamweight"></td>
+											<td class="chp_super_flyweight"></td>
+											<td class="chp_flyweight"></td>
+											<td class="chp_light_flyweight"></td>
+											<td class="chp_minimumweight"></td>
+										</tr>
+										<tr id="chp_tr_kba">
+											<td>
+												<img src="/img/common/logo/orga_logo/KBA.jpg" width="50px" height="50px">
+												<label style="font-weight:bold;">KBA</label>
+											</td>
+											<td class="chp_heavyweight"></td>
+											<td class="chp_cruiserweight"></td>
+											<td class="chp_light_heavyweight"></td>
+											<td class="chp_super_middleweight"></td>
+											<td class="chp_middleweight"></td>
+											<td class="chp_super_welterweight"></td>
+											<td class="chp_welterweight"></td>
+											<td class="chp_super_lightweight"></td>
+											<td class="chp_lightweight"></td>
+											<td class="chp_super_featherweight"></td>
+											<td class="chp_featherweight"></td>
+											<td class="chp_super_bantamweight"></td>
+											<td class="chp_bantamweight"></td>
+											<td class="chp_super_flyweight"></td>
+											<td class="chp_flyweight"></td>
+											<td class="chp_light_flyweight"></td>
+											<td class="chp_minimumweight"></td>
+										</tr>
+										<tr id="chp_tr_kbm">
+											<td>
+												<img src="/img/common/logo/orga_logo/KBM.jpg" width="50px" height="50px">
+												<label style="font-weight:bold;">KBM</label>
+											</td>
+											<td class="chp_heavyweight"></td>
+											<td class="chp_cruiserweight"></td>
+											<td class="chp_light_heavyweight"></td>
+											<td class="chp_super_middleweight"></td>
+											<td class="chp_middleweight"></td>
+											<td class="chp_super_welterweight"></td>
+											<td class="chp_welterweight"></td>
+											<td class="chp_super_lightweight"></td>
+											<td class="chp_lightweight"></td>
+											<td class="chp_super_featherweight"></td>
+											<td class="chp_featherweight"></td>
+											<td class="chp_super_bantamweight"></td>
+											<td class="chp_bantamweight"></td>
+											<td class="chp_super_flyweight"></td>
+											<td class="chp_flyweight"></td>
+											<td class="chp_light_flyweight"></td>
+											<td class="chp_minimumweight"></td>
+										</tr>
+									</table>
+									
+									
+									
+									
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer th:replace="/common/commonFooter.html"></footer> 
+		</div>
+	</div>
+	<script th:inline="javascript" th:src="@{/js/organization/organization.js}"></script>
+</body>
+</html>

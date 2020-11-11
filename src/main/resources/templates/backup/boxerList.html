@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta th:replace="/common/header" />
+</head>
+
+<body>
+<div id="wrap">
+<!-- 	<div th:replace="/common/admin_login_popup"></div> -->
+<!-- 	<div th:replace="/common/contact_us_popup"></div> -->
+	<div th:replace="/common/sitemap"></div>
+    <div th:replace="/common/content_header"></div>
+<!--     <div th:replace="/common/m_content_header"></div> -->
+    
+    <section class="web">
+        <div class="sub_top media"><span class="aro_mind">아로정보기술<sub>정보와 기술 그리고 사람이 중심인 플랫폼</sub></span></div>
+    </section>
+	<section th:replace="/media/navi"></section>
+	<div th:replace="/media/m_navi"></div>
+    
+    <container>
+        <section>
+            <article>
+                <h2>아로정보기술 뉴스</h2>
+                <div class="sub_text2">대중교통 관련 소식, 보도자료, 신규 서비스 오픈 소식</div>
+                <div class="board">
+                    <div class="bl mb2 web">
+                        <div class="board_search">
+                        	<form action="/media/news" name="searchForm">
+                        		<input type="text" name="searchTarget" th:value="${paging.searchTarget}" />
+                        		<a href="#" onclick="this.parentNode.submit();return false;">검색</a>
+                        	</form>
+                        </div>                        
+                    </div>
+                    
+                    <table class="list">
+                        <colgroup>
+                            <col class="cw1" />
+                            <col class="cw" />
+                            <col class="cw1" />
+                        </colgroup>
+                        <tr class="on" th:each="item : ${viewImportant}" th:onclick="|location.href= '/media/viewNews?seq=${item.seq}';|">
+                            <td class="number">공지</td>
+                            <td class="subject" th:text="${item.title}">제목</td>
+                            <td class="date" th:text="${item.regDate}">등록일</td>
+                        </tr>
+                        <tr th:each="item,iterStat : ${viewContent}" th:onclick="|location.href= '/media/viewNews?seq=${item.seq}';|">
+                            <td class="number" th:text="${paging.contentStartNo - iterStat.index}">No</td>
+                            <td class="subject" th:text="${item.title}">제목</td>
+                            <td class="date" th:text="${item.regDate}">등록일</td>
+                        </tr>
+                    </table>
+                </div>
+                <div th:if="${session.admin != null}" class="board_bottom web">
+                    <a href="/media/registerNews" class="btn_default btn_right">글쓰기</a><!-- 관리자 로그인 상태 -->
+                </div>
+                <div th:replace="/common/paging"></div>
+            </article>          
+        </section>
+    </container>
+
+	<footer th:replace="/common/footer"></footer>
+</div>
+</body>
+</html>

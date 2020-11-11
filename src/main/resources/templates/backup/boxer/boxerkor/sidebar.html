@@ -1,0 +1,41 @@
+<div id="side_bar" class="sub_left">
+    <div class="left_nav">
+        <dl>
+            <dt>국내 프로선수</dt>
+            <dd><a href="/boxer/boxerkor/hof">명예의 전당</a></dd>
+            <dd><a href="/boxer/boxerkor/mboxerinfo">남자 프로선수</a></dd>
+            <dd><a href="/boxer/boxerkor/fboxerinfo">여자 프로선수</a></dd>
+        </dl>
+    </div>
+</div>
+<script>
+	(function() {
+		var sideBar = document.getElementById('side_bar');
+		var ddList = sideBar.getElementsByTagName('dd');
+		
+		var highlightMenu = function() {
+			if (/^\/boxer\/boxerkor\/hof.*$/.test(location.pathname)) {
+				ddList[0].classList.add('on');
+			} else if (/^\/boxer\/boxerkor\/mboxerinfo.*$/.test(location.pathname)) {
+				ddList[1].classList.add('on');
+			} else if (/^\/boxer\/boxerkor\/fboxerinfo.*$/.test(location.pathname)) {
+				ddList[2].classList.add('on');
+			}			
+		};
+		
+		var followSideBarEvent = function() {
+			var sideBarOffset = $(sideBar).offset();
+			
+		    $(window).scroll(function() {
+				if ($(document).scrollTop() > sideBarOffset.top) {
+					$(sideBar).addClass('fixed_side_bar');
+				} else {
+					$(sideBar).removeClass('fixed_side_bar');
+				}
+			});	
+		};
+		
+		highlightMenu();
+		followSideBarEvent();
+	}());
+</script>
